@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEARB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-lg-1">
+        <div id="nav" class="">
+            <nav>
+                <h2 class="">GEAR B</h2>
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Nhập mã hoặc tên sản phẩm...">
+                    <button type="submit" class="searchButton"><img src="image/search.png" alt=""></button>
+                </div>
+                <div class="button">
+                    <button class="navBt"><img src="image/dangki.png"><a href="">ĐĂNG KÝ</a></button>
+                    <button class="navBt"><img src="image/dangnhap.png"><a href="">ĐĂNG NHẬP</a></button>
+                    <button class="navBt"><img src="image/khuyenmai.png"><a href="">KHUYẾN MÃI</a></button>
+                    <button class="navBt">
+                      <div class="giohang">
+                        <img src="image/giohang.png">
+                        <img id ="tron"src="image/circle.png">
+                        <h2 id ="tron1">0   </h2>
+                        <a href="">GIỎ HÀNG</a>
+                        <div id="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            Thêm vào giỏ hàng thành công
+                        </div>
+                    </button>    
+                </div>
+                
+            </nav>
+        </div>
+        <div id="headBt1" class="">
+            <div id="headBt">
+                <ul id = main-menu>
+                    <li><button id=""><img src="image/menu.png" alt=""><a href="">DANH MỤC SẢN PHẨM</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">HƯỚNG DẪN THANH TOÁN</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">CHÍNH SÁCH BẢO HÀNH</a></button></li>
+                    <li><button><img src="image/support.png" alt=""><a href="">CHÍNH SÁCH BẢO HIỂM</a></button></li>
+                    <li><button><img src="image/delivery.png" alt=""><a href="">CHÍNH SÁCH VẬN CHUYỂN</a></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg-1">
+        <div class="con1">
+            <div class="con1-1">
+                <img src="image/sell2.png" alt="">
+            </div>
+            <div class="con1-2">
+                <div class="gia">
+                    <h2>GB VIPER Plus a3050</h2>
+                    <div class="priceForm">
+                        <span class="priceNew">18.990.000đ</span>
+                        <span class="priceOld">19.470.000đ</span>
+                    </div>
+                    <button onclick="location.href='thanhtoanGB3050a.html';">MUA NGAY<br>Giao tận nơi hoặc nhận tại cửa hàng</button>
+                    <button id="button1" onclick="muaFun()">THÊM VÀO GIỎ HÀNG<br>Thanh toán ngay</button>
+                </div>
+                <div class="khuyenmai">
+                    <h3>KHUYẾN MÃI ĐẶC BIỆT:</h3>
+                    <ul>
+                        <li>Giảm sốc <b>1,100,100đ</b> chỉ còn <span><b>9,990,000đ</b></span></li>
+                        <li> Mua thêm <b>RAM</b> giảm ngay <span><b>500,000đ</b></span></li>
+                        <li>Nâng cấp <b>SSD</b> giảm ngay <span><b>300,000đ</b></span></li>
+                    </ul>
+                </div>
+            </div>
+            <script src="js/muaBt.js"></script>
+                
+        </div>
+        <div class="con2">
+            <h3><u>Thông số kỹ thuật:   </u></h3><br>
+            <table>
+                <tr>
+                    <th class = "col1"></th>
+                    <th class = "col2">Tên Sản Phẩm</th>
+                    <th class = "col3">Thời gian bảo hành</th>
+                </tr>
+                <tr>
+                    <td class = "col1">Mainboard</td>
+                    <td class = "col2">ASUS PRIME B550M-A (WI-FI) II (Socket AM4)</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">CPU</td>
+                    <td class = "col2">AMD Ryzen 5 5600X / 32MB / 3.7GHz Boost 4.6GHz / 6 nhân 12 luồng</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">RAM</td>
+                    <td class = "col2">PNY XLR8 Silver 8GB 3600 RGB x 2</td>
+                    <td class = "col3">60 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">VGA</td>
+                    <td class = "col2">ASUS Dual GeForce RTX 3050 8GB V2</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">HDD</td>
+                    <td class = "col2">Có thể tùy chọn Nâng cấp</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">SSD</td>
+                    <td class = "col2">PNY CS1031 M.2 2280 256GB Gen 3x4</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">PSU</td>
+                    <td class = "col2" >FSP HV PRO 650W - 80 Plus Bronze</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">Case</td>
+                    <td class = "col2">Xigmatek PHANTOM 3F (3 fan RGB)</td>
+                    <td class = "col3">12 tháng</td>
+                </tr>
+            </table>
+            <div class="danhgia">
+                <div class="text">
+                    <h3><u>Đánh giá chi tiết:</u></h3>
+                    <b>Mainboard ASUS PRIME B550M-A (WI-FI) II (Socket AM4)</b><br>
+                    Đóng vai trò là bộ khung cho GVN VIPER Plus a3050, bo mạch chủ ASUS PRIME B550M-A (WI-FI) II (Socket AM4) được trang bị nhiều công nghệ tiên tiến cùng thiết kế ngầu lòi của dòng PRIME. ASUS PRIME B550M-A (WI-FI) II (Socket AM4) sẽ cung cấp khả năng khai thác tối đa sức mạnh từ các linh kiện trong GVN VIPER Plus a3050. Đây là sự lựa chọn tuyệt vời dành cho không chỉ PC văn phòng mà còn là những cỗ máy PC Gaming mạnh mẽ. 
+                </div>
+                <img src="image/B550.png" alt="">
+                <div class="text">
+                    <b>CPU AMD Ryzen 5 5600X</b><br>
+                    Góp phần vào sức mạnh của VIPER Plus a3050 sẽ là AMD Ryzen 5 5600X. Trang bị 6 nhân 12 luồng cùng xung nhịp tối đa lên đến 4.6GHz, AMD Ryzen 5 5600X hứa hẹn đem lại khả năng xử lý với tốc độ đáng kinh ngạc. Ngoài ra, AMD Ryzen 5 5600X sở hữu thêm những công nghệ nâng cao tốc độ xử lý như Precision Boost 2, Precision Boost Overdrive cung cấp cho người dùng khả năng hoàn thành các công việc, tác vụ nhanh gọn lẹ.
+                </div>
+                <img src="image/ryzen5600.png" alt="">
+                <div class="text">
+                    <b>RAM PNY XLR8 Silver 3600 RGB</b><br>
+                    Tô điểm cho bộ PC Gaming GVN VIPER Plus a3050 với một chút rực rỡ từ RAM PNY XLR8 Silver 3600 RGB. Hoàn thiện với dải đèn RGB cùng lớp giáp tản nhiệt trắng tinh khôi, PNY XLR8 Silver RGB là một lựa chọn tuyệt vời để nâng cao tính thẩm mỹ cho dàn PC chơi game của chúng ta. Bên ngoài bắt mắt, bên trong PNY XLR8 Silver 3600 RGB vẫn đem đến khả năng xử lý đa tác vụ mạnh mẽ với XMP 2.0 và duy trì hoạt động lâu dài cùng giáp tản nhiệt hiệu quả.
+                </div>
+                <img src="image/xlr8.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html> 

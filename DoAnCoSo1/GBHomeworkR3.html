@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEARB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-lg-1">
+        <div id="nav" class="">
+            <nav>
+                <h2 class="">GEAR B</h2>
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Nhập mã hoặc tên sản phẩm...">
+                    <button type="submit" class="searchButton"><img src="image/search.png" alt=""></button>
+                </div>
+                <div class="button">
+                    <button class="navBt"><img src="image/dangki.png"><a href="">ĐĂNG KÝ</a></button>
+                    <button class="navBt"><img src="image/dangnhap.png"><a href="">ĐĂNG NHẬP</a></button>
+                    <button class="navBt"><img src="image/khuyenmai.png"><a href="">KHUYẾN MÃI</a></button>
+                    <button class="navBt">
+                      <div class="giohang">
+                        <img src="image/giohang.png">
+                        <img id ="tron"src="image/circle.png">
+                        <h2 id ="tron1">0   </h2>
+                        <a href="">GIỎ HÀNG</a>
+                        <div id="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            Thêm vào giỏ hàng thành công
+                        </div>
+                    </button>    
+                </div>
+                
+            </nav>
+        </div>
+        <div id="headBt1" class="">
+            <div id="headBt">
+                <ul id = main-menu>
+                    <li><button id=""><img src="image/menu.png" alt=""><a href="">DANH MỤC SẢN PHẨM</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">HƯỚNG DẪN THANH TOÁN</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">CHÍNH SÁCH BẢO HÀNH</a></button></li>
+                    <li><button><img src="image/support.png" alt=""><a href="">CHÍNH SÁCH BẢO HIỂM</a></button></li>
+                    <li><button><img src="image/delivery.png" alt=""><a href="">CHÍNH SÁCH VẬN CHUYỂN</a></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg-1">
+        <div class="con1">
+            <div class="con1-1">
+                <img src="image/sell1.png" alt="">
+            </div>
+            <div class="con1-2">
+                <div class="gia">
+                    <h2>GB HOMEWORK R3GB HOMEWORK R3</h2>
+                    <div class="priceForm">
+                        <span class="priceNew">4.990.000đ</span>
+                        <span class="priceOld">5.940.000đ</span>
+                    </div>
+                    <button onclick="location.href='thanhtoanGBR3.html';">MUA NGAY<br>Giao tận nơi hoặc nhận tại cửa hàng</button>
+                    <button id="button1" onclick="muaFun()">THÊM VÀO GIỎ HÀNG<br>Thanh toán ngay</button>
+                </div>
+                <div class="khuyenmai">
+                    <h3>KHUYẾN MÃI ĐẶC BIỆT:</h3>
+                    <ul>
+                        <li>Giảm sốc <b>1,100,100đ</b> chỉ còn <span><b>9,990,000đ</b></span></li>
+                        <li> Mua thêm <b>RAM</b> giảm ngay <span><b>500,000đ</b></span></li>
+                        <li>Nâng cấp <b>SSD</b> giảm ngay <span><b>300,000đ</b></span></li>
+                    </ul>
+                </div>
+            </div>
+            <script src="js/muaBt.js"></script>
+                
+        </div>
+        <div class="con2">
+            <h3><u>Thông số kỹ thuật:   </u></h3><br>
+            <table>
+                <tr>
+                    <th class = "col1"></th>
+                    <th class = "col2">Tên Sản Phẩm</th>
+                    <th class = "col3">Thời gian bảo hành</th>
+                </tr>
+                <tr>
+                    <td class = "col1">Mainboard</td>
+                    <td class = "col2">Mainboard Asus PRIME A320M-K </td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">CPU</td>
+                    <td class = "col2">AMD Ryzen 3 3200G / 6MB / 4.0GHz / 4 nhân 4 luồng / AM4</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">RAM</td>
+                    <td class = "col2">RAM TeamGroup T-Force Vulcan Z Red 8GB 3200 DDR4</td>
+                    <td class = "col3">60 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">HDD</td>
+                    <td class = "col2">Có thể tùy chọn Nâng cấp</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">SSD</td>
+                    <td class = "col2">SSD PNY CS900 240G 2.5" Sata 3</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">PSU</td>
+                    <td class = "col2" >Jetek 350W Elite V2</td>
+                    <td class = "col3">36 tháng</td>
+                </tr>
+                <tr>
+                    <td class = "col1">Case</td>
+                    <td class = "col2">Jetek EM4</td>
+                    <td class = "col3">12 tháng</td>
+                </tr>
+            </table>
+            <div class="danhgia">
+                <div class="text">
+                    <h3><u>Đánh giá chi tiết:</u></h3>
+                    <b>Bo mạch chủ Asus Prime A320M-K</b><br>
+                    Main máy tính PRIME A320M series sở hữu Công nghệ 5X Protection II đầu ngành, sử dụng những linh kiện tốt nhất, thiết kế mạch hoàn hảo và tuân thủ các tiêu chuẩn khắt khe để bảo đảm chất lượng và độ bền lâu dài cho bo mạch chủ của bạn.
+                </div>
+                <img src="image/A320M.png" alt="">
+                <div class="text">
+                    <b>Bộ vi xử lý mạnh mẽ từ Ryzen trên GVN Homework R3</b><br>
+                    GVN Homework R3 sở hữu hiệu suất cao với CPU đến từ AMD. Với sức mạnh áp đảo về số nhân lẫn số luồng, bạn hoàn toàn có thể tin tưởng vào khả năng xử lý đa tác vụ lẫn chơi các tựa game đòi hỏi tài nguyên CPU lớn mà không sợ gặp tình trạng vi xử lý hoạt động quá mức. Với mức hiệu năng này, ngoài chuyện cân card để chơi game ra, bạn sẽ còn có thể xử lý nhiều tác vụ khác nữa. Bởi vậy mà đây thật sự là mẫu CPU không thể phù hợp hơn khi build PC GVN Homework R3.
+                </div>
+                <img src="image/intel.png" alt="">
+                <div class="text">
+                    <b>Dung lượng lưu trữ của GVN Homework R3</b><br>
+                    Về mặt lưu trữ thì các bạn sẽ có một ổ cứng SSD 240GB đảm bảo tốc độ khởi động máy, tắt máy hay các thao tác mở game, ứng dụng nhanh hơn rất nhiều so với các ổ HDD thông thường. Vì để tối ưu trong việc giữ giá tiền thấp nhất có thể trong khi vẫn đảm bảo hiệu năng, máy tính để bàn GVN Homework i3 sẽ không có sẵn ổ cứng HDD, tuy nhiên bạn hoàn toàn có thể mua thêm nếu nhu cầu của bạn cần lưu trữ nhiều. 
+                </div>
+                <img src="image/ssd.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html> 

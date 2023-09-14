@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEARB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-lg-1">
+        <div id="nav" class="">
+            <nav>
+                <h2 class="">GEAR B</h2>
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Nhập mã hoặc tên sản phẩm...">
+                    <button type="submit" class="searchButton"><img src="image/search.png" alt=""></button>
+                </div>
+                <div class="button">
+                    <button class="navBt"><img src="image/dangki.png"><a href="">ĐĂNG KÝ</a></button>
+                    <button class="navBt"><img src="image/dangnhap.png"><a href="">ĐĂNG NHẬP</a></button>
+                    <button class="navBt"><img src="image/khuyenmai.png"><a href="">KHUYẾN MÃI</a></button>
+                    <button class="navBt">
+                      <div class="giohang">
+                        <img src="image/giohang.png">
+                        <img id ="tron"src="image/circle.png">
+                        <h2 id ="tron1">0   </h2>
+                        <a href="">GIỎ HÀNG</a>
+                        <div id="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            Đặt hàng thành công
+                        </div>
+                    </button>    
+                </div>
+                
+            </nav>
+        </div>
+        <div id="headBt1" class="">
+            <div id="headBt">
+                <ul id = main-menu>
+                    <li><button id=""><img src="image/menu.png" alt=""><a href="">DANH MỤC SẢN PHẨM</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">HƯỚNG DẪN THANH TOÁN</a></button></li>
+                    <li><button><img src="image/lend.png" alt=""><a href="">CHÍNH SÁCH BẢO HÀNH</a></button></li>
+                    <li><button><img src="image/support.png" alt=""><a href="">CHÍNH SÁCH BẢO HIỂM</a></button></li>
+                    <li><button><img src="image/delivery.png" alt=""><a href="">CHÍNH SÁCH VẬN CHUYỂN</a></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg-1">
+        <div class="con-thanh-toan">
+            <div class="con-thong-tin">
+                <h3>Sản phẩm</h3>
+                <div class="sanpham">
+                    <div class="sanpham1-1">
+                        <img src="image/sell1.png" alt="">
+                    </div>
+                    <div class="sanpham1-2">
+                        <b>GB HOMEWORK R3</b>
+                    </div>
+                </div>
+                <h3>Thông tin khách hàng mua</h3>
+                <div class="gioitinhBt">
+                    <input type="radio" name="select" id="option-1">
+                    <input type="radio" name="select" id="option-2">
+                    <label for="option-1" class="option option-1">
+                        <div class="dot"></div>
+                        <span>Anh</span>
+                    </label>
+                    <label for="option-2" class="option option-2">
+                        <div class="dot"></div>
+                        <span>Chị</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="name" placeholder="Họ tên" required="" />
+                    <input type="text" class="form__input" id="sdt" placeholder="Số điện thoại" required="" />
+                </div>
+                <h3>Chọn cách giao hàng</h3>
+                <div class="diaChi">
+                    <div class="giaohang">
+                        <input type="radio" name="select1" id="option-3" checked>
+                        <label for="option-3" class="option option-3">
+                            <div class="dot"></div>
+                            <span>Giao hàng tận nơi</span>
+                        </label>
+                    </div>
+                    <div class="diaChi1">
+                        <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                        <option id ="def1" value="" selected>Chọn tỉnh thành</option>           
+                        </select>
+                                      
+                        <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                        <option id="def2" value="" selected>Chọn quận huyện</option>
+                        </select>
+                            
+                        <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                        <option id="def3" value="" selected>Chọn phường xã</option>
+                        </select>     
+                        
+                        <input type="text" class="form__input" id="diachi" placeholder="Số nhà, tên đường" required="" />
+                    </div>
+                </div>
+                <h3 style="padding-bottom: 0px;">Phí vận chuyển: Miễn phí</h3>
+                <h3>Tổng tiền: <span style="color: #f74848;">4.990.000đ</span></h3>
+                <div class="datHangBt">
+                    <button onclick="muaFun1()">ĐẶT HÀNG NGAY</button>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+            <script src="js/diachi.js"></script>
+            <script src="js/muaBt.js"></script>
+        </div>
+    </div>
+</body>
+</html>
