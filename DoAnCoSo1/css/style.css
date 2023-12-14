@@ -178,8 +178,8 @@ ul.sub-menu{
   display: block;
   border-radius: 10px;
 }
-#main-menu li:hover ul.sub-menu{
-  display: block;
+ul.sub-menu li {
+  position: relative;
 }
 #a-submenu{
   display: flex;
@@ -224,9 +224,9 @@ ul.sub-menu li:hover #a-submenu{
   padding-bottom: 8px;
   display: none;
   border-radius: 10px;
-  top: -1px;
+  top: -9px;
   left:292px;
-  height: 459px;
+  height: 415px;
   width: 1113px;
 }
 #sub-menu3{
@@ -237,36 +237,137 @@ ul.sub-menu li:hover #a-submenu{
   padding-bottom: 8px;
   display: none;
   border-radius: 10px;
-  top: -1px;
+  top: -54px;
   left: 292px;
-  height: 459px;
+  height: 415px;
   width: 1113px;
 }
-ul.sub-menu li:hover ul#sub-menu2{
+#sub-menu4 {
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -98px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu5{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -143px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu6{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -186px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu7{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -230px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu8{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -275px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu9{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -318px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+#sub-menu10{
+  background-color: white;
+  position: absolute;
+  list-style: none;
+  padding: 20px 0px;
+  padding-bottom: 8px;
+  display: none;
+  border-radius: 10px;
+  top: -362px;
+  left: 292px;
+  height: 415px;
+  width: 1113px;
+}
+ul.sub-menu li:hover ul#sub-menu2,
+ul.sub-menu li:hover ul#sub-menu3,
+ul.sub-menu li:hover ul#sub-menu4,
+ul.sub-menu li:hover ul#sub-menu5,
+ul.sub-menu li:hover ul#sub-menu6,
+ul.sub-menu li:hover ul#sub-menu7,
+ul.sub-menu li:hover ul#sub-menu8,
+ul.sub-menu li:hover ul#sub-menu9,
+ul.sub-menu li:hover ul#sub-menu10{
   display: block;
 }
-ul.sub-menu li:hover ul#sub-menu3{
-  display: block;
-}
-#sub-menu2 ul li{
+#sub-menu2 ul li,
+#sub-menu3 ul li,
+#sub-menu4 ul li,
+#sub-menu5 ul li,
+#sub-menu6 ul li,
+#sub-menu7 ul li,
+#sub-menu8 ul li,
+#sub-menu9 ul li,
+#sub-menu10 ul li{
   font-size: 15px;
   list-style: none;
   display: block;
   padding: 3px 2px;
   align-items: center;
 }
-#sub-menu2 ul li a{
-  text-decoration: none;
-  color: black;
-}
-#sub-menu3 ul li{
-  font-size: 15px;
-  list-style: none;
-  display: block;
-  padding: 3px 2px;
-  align-items: center;
-}
-#sub-menu3 ul li a{
+#sub-menu2 ul li a,
+#sub-menu3 ul li a,
+#sub-menu4 ul li a,
+#sub-menu5 ul li a,
+#sub-menu6 ul li a,
+#sub-menu7 ul li a,
+#sub-menu8 ul li a,
+#sub-menu9 ul li a,
+#sub-menu10 ul li a {
   text-decoration: none;
   color: black;
 }
