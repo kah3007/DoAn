@@ -251,7 +251,25 @@
                 die("Error: " . $e->getMessage());
             }
         }
-
+        public function updatePass($email, $newPass)
+        {
+            try {
+                $sql = "UPDATE user SET password = :password WHERE email = :email";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':password', $newPass, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->execute();
+        
+                if ($stmt->rowCount() > 0) {
+                    return true; 
+                } else {
+                    return false;
+                }
+            } catch (PDOException $e) {
+                die("Error: " . $e->getMessage());
+            }
+        }
+        
 
     }
 ?>

@@ -1,3 +1,12 @@
+<?php 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['reset_success']) && $_SESSION['reset_success']) {
+        echo "<script>alert('Password reset successfully!');</script>";
+        $_SESSION['reset_success'] = false;
+    }
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -29,7 +38,7 @@
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputUsername" name="inputUsername"
                                                 placeholder="name@example.com" required/>
-                                            <label for="inputUsername">UserName</label>
+                                            <label for="inputUsername">Username</label>
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputPassword" name="inputPassword"
@@ -43,7 +52,7 @@
                                                 Password</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Forgot Password?</a>
+                                            <a class="small" href="../View/forgot-password.php">Forgot Password?</a>
                                             <input class="btn btn-primary" name='dangnhap' type='submit' value="Login" >
                                         </div>
                                         <div class="card-footer text-center py-3">
