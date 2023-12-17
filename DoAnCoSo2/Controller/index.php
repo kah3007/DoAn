@@ -6,12 +6,12 @@
     if (isset($_SESSION['action'])) {
         $action = $_SESSION['action'];
     } else {
-        $action = 'login'; 
+        $action = 'homepage'; 
     }
     switch ($action) {
-        case 'login':
-            include('../View/login.php');
-            break;
+        case 'homepage':
+            header("Location: ../View/user/homepage.php");
+            exit();
         case 'view':
             if ($role == 1) {
                 header("Location: ../View/admin/index.php");
@@ -22,6 +22,9 @@
                 header("Location: ../View/user/homepage.php");
                 exit;
             }
+        case 'login':
+            include('../View/login.php');
+            break;
         case 'register':
             include('../View/register.php');    
             break;

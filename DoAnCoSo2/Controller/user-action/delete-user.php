@@ -10,7 +10,7 @@
         $result = $user->deleteUser($userId);
 
         if ($result) {
-            header("Location: ../../View/edit-user.php");
+            header("Location: ../../View/admin/edit-user.php");
             exit();
         } else {
             echo "Error deleting user.";

@@ -84,7 +84,7 @@
                             alert(response.message);
                         } else {
                             alert(response.message);
-                            location.reload();
+                            window.location.href = '../Controller/index.php';
                         }
                     } catch (e) {
                         console.error('Error parsing JSON:', e);

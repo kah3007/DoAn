@@ -36,6 +36,8 @@
     <meta name="author" content="" />
     <title>Blog Post</title>
     <link href="../css/style1.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -49,9 +51,34 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="../user/homepage.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                        </ul>
+                    </li>
+                    <?php if(isset($_SESSION['userId'])):?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user fa-fw"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../profile-details.php">Profile details</a></li>
+                            <li><a class="dropdown-item" href="../change-password.php">Change password</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="../../Controller/login-action/logout.php">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php else:?>
+                    <li class="nav-item"><a class="nav-link" href="../login.php">Login</a></li>
+                    <?php endif;?>
                 </ul>
             </div>
         </div>
@@ -85,13 +112,17 @@
                     <div class="card bg-light">
                         <div class="card-body">
                             <!-- Comment form-->
+                            <?php if(isset($_SESSION['userId'])):?>
                             <form id="comment-submit" action="../View/user/article-view.php" class="mb-4">
                                 <textarea id="comment_text" name="comment_text" class="form-control" rows="3"
                                     placeholder="Join the discussion and leave a comment!"></textarea>
                             </form>
+                            <?php else:?>
+                            <div class="alert alert-danger"><?php echo "You need to sign in before comment!"?></div>
 
+                            <?php endif;?>
                             <?php foreach ($comments as $comment): ?>
-                                <?php 
+                            <?php 
                                 if($_SESSION['userId'] == $comment->getUserId()){
                                     $fullName = "Me";
                                 }
@@ -106,31 +137,36 @@
                                 $commentId = $comment->getCommentId();
 
                                 ?>
-                                <div class="">
-                                    <div class="d-flex flex-row justify-content-between mb-2">
-                                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3 ">
-                                            <div class="fw-bold"><?php echo $fullName; ?></div>
-                                            <div class="fw-light fs-6"><?php echo $formatted; ?></div>
-                                            <?php echo $comment->getCommentText(); ?>
-                                            
-                                        </div>
-                                        <div class="ms-auto">
-                                            <!-- <button class="btn btn-sm btn-primary reply-button"
+                            <div class="">
+                                <div class="d-flex flex-row justify-content-between mb-2">
+                                    <div class="flex-shrink-0"><img class="rounded-circle"
+                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                    <div class="ms-3 ">
+                                        <div class="fw-bold"><?php echo $fullName; ?></div>
+                                        <div class="fw-light fs-6"><?php echo $formatted; ?></div>
+                                        <?php echo $comment->getCommentText(); ?>
+
+                                    </div>
+                                    <div class="ms-auto">
+                                        <!-- <button class="btn btn-sm btn-primary reply-button"
                                                 data-comment-id="<?php echo $commentId; ?>">Reply</button> -->
-                                            <?php if ($_SESSION['userId'] === $comment->getUserId()):?>
-                                            <button class="btn btn-sm btn-primary edit-button" href="" data-comment-id="<?php echo $commentId; ?>">Edit</button>
-                                            <a class="btn btn-sm btn-danger" href="../../Controller/article-action/delete-comment.php?commentId=<?php echo $comment->getCommentId()?>&articleId=<?php echo $_GET['id']?>">Delete</a>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="edit-form ms-2" style="display: none;" data-comment-id="<?php echo $commentId; ?>">
-                                            <form id="edit-submit" action="../View/user/article-view.php" method="post" data-comment-id="<?php echo $commentId?>">
-                                                <textarea name="edit-text" class="form-control" rows="2"><?php echo $comment->getCommentText(); ?></textarea>
-                                            </form>
-                                        </div>
+                                        <?php if ($_SESSION['userId'] === $comment->getUserId()):?>
+                                        <button class="btn btn-sm btn-primary edit-button" href=""
+                                            data-comment-id="<?php echo $commentId; ?>">Edit</button>
+                                        <a class="btn btn-sm btn-danger"
+                                            href="../../Controller/article-action/delete-comment.php?commentId=<?php echo $comment->getCommentId()?>&articleId=<?php echo $_GET['id']?>">Delete</a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="edit-form ms-2" style="display: none;"
+                                        data-comment-id="<?php echo $commentId; ?>">
+                                        <form id="edit-submit" action="../View/user/article-view.php" method="post"
+                                            data-comment-id="<?php echo $commentId?>">
+                                            <textarea name="edit-text" class="form-control"
+                                                rows="2"><?php echo $comment->getCommentText(); ?></textarea>
+                                        </form>
                                     </div>
                                 </div>
+                            </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -210,7 +246,6 @@
                 });
             }
         });
-
         $('.edit-button').click(function() {
             $('.edit-form').hide();
             var commentId = $(this).data('comment-id');

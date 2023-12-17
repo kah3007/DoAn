@@ -8,7 +8,7 @@
         $result = $article->deleteArticle($articleId);
 
         if ($result) {
-            header("Location: ../../View/edit-article.php?show=0");
+            header("Location: ../../View/admin/edit-article.php?show=0");
             exit();            
         }
     } else {
