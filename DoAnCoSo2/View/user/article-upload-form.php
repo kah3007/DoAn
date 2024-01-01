@@ -1,18 +1,8 @@
 <?php
     include_once __DIR__ . '/../../Model/database.php';
     include_once __DIR__ . '/../../Model/article.php';
-    include_once __DIR__ . '/../../Model/user.php';
-
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
-    }
-    if (isset($_GET['id'])) {
-        $db = database::getDB();
-        $article = new Article($db);
-        $user = new User($db);
-        $arData = $article->loadArticle($_GET['id'],$db);
-        $imageUrl = !empty($arData) ? $arData->getImg() : '';
-        $newImageUrl = str_replace('../../View/', '../', $imageUrl);
     }
 ?>
 <!DOCTYPE html>
@@ -40,12 +30,12 @@
         <form id="article-submit" action="../View/admin/article-upload-form.php" method="post" class="was-validated" data-image-url="<?php echo $imageUrl; ?>">
             <div class="mb-6">
                 <label class="form-label">Submit as :
-                    <?php echo !empty($arData) ? $user->getUsernameById($arData->getUserId()) : $_SESSION['username']?></label>
+                    <?php echo $_SESSION['username']?></label>
             </div>
             <div class="mb-3">
                 <label for="inputTitle" class="form-label">Title</label>
                 <input type="text" class="form-control" id="inputTitle" name="inputTitle"
-                    value="<?php echo !empty($arData) ? $arData->getTitle() : ''; ?>" required>
+                    value="" required>
                 <div class="invalid-feedback">
                     Please enter title in the textarea.
                 </div>
@@ -53,28 +43,21 @@
             <div class="mb-3">
                 <label for="inputContent" class="form-label">Content</label>
                 <textarea class="form-control " id="inputContent" name="inputContent" placeholder="Required content" rows="10"
-                    required><?php echo !empty($arData) ? htmlspecialchars($arData->getContent()) : ''; ?></textarea>
+                    required></textarea>
                 <div class="invalid-feedback">
                     Please enter content in the textarea.
                 </div>
             </div>
             <div class="mb-3">
-                <?php if (!empty($imageUrl)) : ?>
-                <img src="<?php echo $newImageUrl; ?>" alt="Article Image" class="img-thumbnail">
-                <input id="inputImg" name="inputImg" type="file" class="form-control" aria-label="file">
-                <?php else : ?>
                 <input id="inputImg" name="inputImg" type="file" class="form-control" aria-label="file" required>
                 <div class="invalid-feedback">Invalid file</div>
-                <?php endif; ?>
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
     </div>
-    <script>
-        var $imageUrl = "<?php echo isset($imageUrl) ? $imageUrl : ''; ?>";
-    </script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
     $("#article-submit").submit(function(event) {

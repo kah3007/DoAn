@@ -44,13 +44,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="../user/homepage.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./homepage.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./homepage.php">Contact</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                                <li><a class="dropdown-item" href="./blog-home.php">Blog Home</a></li>
                             </ul>
                         </li>
                         <?php if(isset($_SESSION['userId'])):?>
@@ -81,17 +81,15 @@
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Môi trường và cộng đồng</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Một thế giới trong sạch, vạn tâm hồn trong xanh
+                            <h1 class="display-5 fw-bolder text-white mb-2">Environment and community</h1>
+                            <p class="lead fw-normal text-white-50 mb-4">A clean world, thousands of pure souls
                             </p>
                             <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     
                                 </div> -->
                         </div>
                     </div>
-                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
-                            src="https://cdn.unenvironment.org/unepmap/s3fs-public/2023-10/COP23_Portoroz_01.jpg"
-                            alt="..." /></div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://cdn.unenvironment.org/unepmap/s3fs-public/2023-10/COP23_Portoroz_01.jpg" alt="..." /></div>
                 </div>
             </div>
         </header>
@@ -100,74 +98,34 @@
             <div class="container px-5 my-5">
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h2 class="fw-bolder mb-0">Thông tin</h2>
+                        <h2 class="fw-bolder mb-0">Information</h2>
                     </div>
                     <div class="col-lg-8">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                <h2 class="h5">Mục tiêu và sứ mệnh</h2>
-                                <p class="mb-0">Bảo vệ, duy trì và phục hồi sự cân bằng trong hệ thống sinh thái tự nhiên. Giảm thiểu tác động tiêu cực của con người đối với môi trường.</p>
+                                <h2 class="h5">Objectives and mission</h2>
+                                <p class="mb-0">Protect, maintain and restore balance in natural ecological systems. Minimize negative human impacts on the environment.</p>
                             </div>
                             <div class="col mb-5 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                <h2 class="h5">Chia sẻ kiến thức</h2>
-                                <p class="mb-0">Thông tin về các loại ô nhiễm khác nhau như ô nhiễm không khí, nước, đất, và các tác động của chúng đối với sức khỏe con người và hệ sinh thái.</p>
+                                <h2 class="h5">Share knowledge</h2>
+                                <p class="mb-0">Information about different types of pollution such as air, water, and soil pollution, and their effects on human health and ecosystems.</p>
                             </div>
                             <div class="col mb-5 mb-md-0 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Tham gia và hỗ trợ</h2>
-                                <p class="mb-0">Hỗ trợ tài chính cho các tổ chức bảo vệ môi trường qua quyên góp tiền mặt hoặc ủng hộ các chiến dịch gây quỹ</p>
-                            </div>
-                            <div class="col h-100">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Chính sách</h2>
-                                <p class="mb-0">Các biện pháp để bảo vệ rừng, nguồn nước và các hệ thống sinh thái liên quan, bao gồm việc quản lý rừng bền vững và bảo vệ các khu vực dự trữ nước.</p>
+                                <h2 class="h5">Get involved and support</h2>
+                                <p class="mb-0">Provide financial support to environmental protection organizations through cash donations or support for fundraising campaigns</p>
                             </div>
                         </div>
-                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- Testimonial section-->
-        <div class="py-5 bg-light">
-            <div class="container px-5 my-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-10 col-xl-7">
-                        <div class="text-center">
-                            <div class="fs-4 mb-4 fst-italic">"Phần còn lại của thế giới (thiên nhiên) có thể tiếp tục
-                                sống mà không có chúng ta, nhưng chúng ta không thể tồn tại nếu thiếu đi chúng"</div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img class="rounded-circle me-3"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/6/69/Dr._Sylvia_Earle%2C_Construction_Worker%3F_%286666200905%29_%28cropped%29.jpg"
-                                    alt="..." />
-                                <div class="fw-bold">
-                                    - Sylvia Alice Earle -
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog preview section-->
-        <section class="py-5">
-            <div class="container px-5 my-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="text-center">
-                            <h2 class="fw-bolder">Tin tức nổi bật</h2>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
-                        </div>
-                    </div>
-
+                <div class="col-lg-4 mb-5 mb-lg-0 ">
+                        <h2 class="fw-bolder mb-4">News</h2>
                 </div>
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="<?php echo isset($articles) ? $articles[0]['img'] : "" ?>"
+                            <img class="card-img" src="<?php echo isset($articles) ? $articles[0]['img'] : "" ?>"
                                 alt="..." />
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
@@ -214,7 +172,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="<?php echo isset($articles) ? $articles[1]['img'] : "" ?>"
+                            <img class="card-img" src="<?php echo isset($articles) ? $articles[1]['img'] : "" ?>"
                                 alt="..." />
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
@@ -261,7 +219,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="<?php echo isset($articles) ? $articles[2]['img'] : "" ?>"
+                            <img class="card-img" src="<?php echo isset($articles) ? $articles[2]['img'] : "" ?>"
                                 alt="..." />
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
@@ -316,18 +274,18 @@
                     <div
                         class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
-                            <div class="fs-3 fw-bold text-white">Hãy chung tay vì ngôi nhà chung của chúng ta.</div>
-                            <div class="text-white-50">Đăng ký nhận bản tin của chúng tôi để biết những cập nhật mới
-                                nhất.</div>
+                            <div class="fs-3 fw-bold text-white">Let's join hands for our common home.</div>
+                            <div class="text-white-50">You can contribute articles to help develop the community </div>
                         </div>
                         <div class="ms-xl-4">
                             <div class="input-group mb-2">
-                                <input class="form-control" type="text" placeholder="Email..."
-                                    aria-label="Email address..." aria-describedby="button-newsletter" />
-                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Đăng
-                                    kí</button>
+                                <?php if(isset($_SESSION['userId'])):?>
+                                    <a class="btn btn-outline-light" id="button-newsletter" type="button" href="./article-upload-form.php">Contribute an article !</a>
+                                <?php else:?>
+                                    <div class="alert alert-danger"><?php echo "You need to sign in before contribute your article!"?></div>
+                                <?php endif;?>
                             </div>
-                            <div class="small text-white-50">Chúng tôi sẽ không bao giờ chia sẻ dữ liệu của bạn.</div>
+                            <div class="small text-white-50">We will never share your data.</div>
                         </div>
                     </div>
                 </aside>

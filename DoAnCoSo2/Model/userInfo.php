@@ -179,6 +179,7 @@ class userInfo {
             die("Error: " . $e->getMessage());
         }
     }
+    
 
 }
 

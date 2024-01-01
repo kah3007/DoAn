@@ -120,10 +120,18 @@
     <script>
     $("#profile-submit").submit(function(event) {
         event.preventDefault();
+        var formData = new FormData(this);
+        var urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('id')) {
+            formData.append('userIdOld', urlParams.get('id'));
+        }
         $.ajax({
             type: "POST",
             url: '../Controller/user-action/profile-saving.php',
-            data: $(this).serializeArray(),
+            data: formData,
+            contentType: false,
+            processData: false,
             success: function(response) {
                 try {
                     response = JSON.parse(response);

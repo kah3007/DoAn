@@ -155,6 +155,17 @@ class Article {
             die("Error: " . $e->getMessage());
         }
     }
+    public function loadAllArticleByPage($pageNumber) {
+        try {
+            $sql = "SELECT * FROM article WHERE approved = 1 OR approved = 2 ORDER BY datePosted DESC LIMIT 9 OFFSET " . (($pageNumber - 1) * 9);
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            die("Error: " . $e->getMessage());
+        }
+    }
     public function loadAllArticleUnapproved() {
         try {
             $sql = "SELECT * FROM article WHERE approved = 0";
@@ -227,6 +238,17 @@ class Article {
             die("Error: " . $e->getMessage());
         }
     } 
+    public function getArticleByTitle($title, $pageNumber) {
+        try {
+            $sql = "SELECT * FROM article WHERE title LIKE '%" . $title . "%' ORDER BY datePosted DESC LIMIT 9 OFFSET " . (($pageNumber - 1) * 9);
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            die("Error: " . $e->getMessage());
+        }
+    }
 }    
 
 ?>

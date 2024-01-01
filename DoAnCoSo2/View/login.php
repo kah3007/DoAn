@@ -46,7 +46,7 @@
                                             <label for="inputPassword">Password</label>
                                         </div>
                                         <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox"
+                                            <input class="form-check-input" id="inputRememberPassword" name="inputRememberPassword" type="checkbox"
                                                 value="" />
                                             <label class="form-check-label" for="inputRememberPassword">Remember
                                                 Password</label>

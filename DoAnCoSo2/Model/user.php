@@ -73,6 +73,24 @@
 
             return $result;
         }
+        public function getUsernameById($userId){
+            try {
+                $sql = "SELECT username FROM user WHERE userId = :userId";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+                $stmt->execute();
+    
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+                if ($result) {
+                    return $result['username'];
+                } else {
+                    return "";
+                }
+            } catch (PDOException $e) {
+                die("Error: " . $e->getMessage());
+            }
+        }
         public function checkUser($username, $password){
             try {
                 $stmt = $this->db->prepare("SELECT * FROM user WHERE username = :username AND password = :password");
