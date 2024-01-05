@@ -84,21 +84,21 @@ if (
     if ($duplicateUser) {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Tên người dùng đã tồn tại. Vui lòng chọn thông tin khác.'
+            'message' => 'Username already exists. Please select other information.'
         ));
         exit;
     }
     elseif ($duplicateEmail) {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Email đã tồn tại. Vui lòng chọn thông tin khác.'
+            'message' => 'Email already exists. Please select other information.'
         ));
         exit;
     }
     elseif ($duplicatePhoneNumber) {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Số điện thoại đã tồn tại. Vui lòng chọn thông tin khác.'
+            'message' => 'Phone number already exists. Please select other information.'
         ));
         exit;
     }
@@ -136,19 +136,19 @@ if (
 
         echo json_encode(array(
             'status' => 1,
-            'message' => 'Lưu thông tin thành công'
+            'message' => 'Saved information successfully'
         ));
 
     } catch (PDOException $e) {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Lỗi khi lưu thông tin. Vui lòng thử lại sau.'
+            'message' => 'Error while saving information. Please try again later.'
         ));
     }
 } else {
     echo json_encode(array(
         'status' => 0,
-        'message' => 'Thông tin không đúng'
+        'message' => 'Information is incorrect'
     ));
     exit;
 }

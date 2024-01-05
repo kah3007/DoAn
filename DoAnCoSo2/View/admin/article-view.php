@@ -44,18 +44,18 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="./homepage.php">PTE</a>
+            <a class="navbar-brand" href="">PTE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../user/homepage.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.php">Go back admin</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                            <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                            <li><a class="dropdown-item" href="./blog-home.php">Blog Home</a></li>
                         </ul>
                     </li>
                     <?php if(isset($_SESSION['userId'])):?>
@@ -111,7 +111,7 @@
                         <div class="card-body">
                             <!-- Comment form-->
                             <?php if(isset($_SESSION['userId'])):?>
-                            <form id="comment-submit" action="../View/user/article-view.php" class="mb-4">
+                            <form id="comment-submit" action="../View/admin/article-view.php" class="mb-4">
                                 <textarea id="comment_text" name="comment_text" class="form-control" rows="3"
                                     placeholder="Join the discussion and leave a comment!"></textarea>
                             </form>
@@ -146,14 +146,8 @@
 
                                     </div>
                                     <div class="ms-auto">
-                                        <!-- <button class="btn btn-sm btn-primary reply-button"
-                                                data-comment-id="<?php echo $commentId; ?>">Reply</button> -->
-                                        <?php if ($_SESSION['userId'] === $comment->getUserId()):?>
-                                        <button class="btn btn-sm btn-primary edit-button" href=""
-                                            data-comment-id="<?php echo $commentId; ?>">Edit</button>
                                         <a class="btn btn-sm btn-danger"
                                             href="../../Controller/article-action/delete-comment.php?commentId=<?php echo $comment->getCommentId()?>&articleId=<?php echo $_GET['id']?>">Delete</a>
-                                        <?php endif; ?>
                                     </div>
                                     <div class="edit-form ms-2" style="display: none;"
                                         data-comment-id="<?php echo $commentId; ?>">
@@ -224,38 +218,6 @@
                 event.preventDefault();
                 var formData = new FormData(this);
                 var urlParams = new URLSearchParams(window.location.search);
-
-                if (urlParams.has('id')) {
-                    formData.append('id', urlParams.get('id'));
-                }
-
-                $.ajax({
-                    type: 'POST',
-                    url: '../../Controller/article-action/process-comment.php',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function(response) {
-                        location.reload();
-                    },
-                    error: function(error) {
-                        console.error(error);
-                    }
-                });
-            }
-        });
-        $('.edit-button').click(function() {
-            $('.edit-form').hide();
-            var commentId = $(this).data('comment-id');
-            $('.edit-form[data-comment-id="' + commentId + '"]').show();
-        });
-        $('#edit-submit').keypress(function(event) {
-            if (event.which === 13 && !event.shiftKey) {
-                event.preventDefault();
-                var formData = new FormData(this);
-                var urlParams = new URLSearchParams(window.location.search);
-                var commentId = $(this).data('comment-id');
-                formData.append('comment-id', commentId);
 
                 if (urlParams.has('id')) {
                     formData.append('id', urlParams.get('id'));

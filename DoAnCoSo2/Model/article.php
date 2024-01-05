@@ -74,7 +74,6 @@ class Article {
                     $sql = "UPDATE article
                             SET title = :title,
                                 content = :content,
-                                userId = :userId,
                                 img = :img,
                                 datePosted = :datePosted,
                                 approved = 1
@@ -93,7 +92,9 @@ class Article {
             $stmt->bindParam(':title', $this->title);
             $stmt->bindParam(':content', $this->content);
             $stmt->bindParam(':img', $this->img);
-            $stmt->bindParam(':userId', $this->userId);
+            if($articleID == -1){
+                $stmt->bindParam(':userId', $this->userId);
+            }
             $stmt->bindParam(':datePosted', $this->datePosted);
 
             $stmt->execute();

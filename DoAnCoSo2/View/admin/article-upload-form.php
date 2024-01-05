@@ -77,6 +77,7 @@
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
+        
     $("#article-submit").submit(function(event) {
         event.preventDefault();
         var formData = new FormData(this);

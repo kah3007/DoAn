@@ -16,14 +16,14 @@
         if ($u->isUsernameTaken($username)) {
             echo json_encode(array(
                 'status' => 0,
-                'message' => 'Tên đăng nhập đã tồn tại'
+                'message' => 'Username available'
             ));
             exit;
         }
         elseif ($result != 0) {
             echo json_encode(array(
                 'status' => 0,
-                'message' => 'Mật khẩu không trùng nhau'
+                'message' => 'Passwords do not match'
             ));
             exit;
         }
@@ -34,20 +34,20 @@
             $_SESSION['action'] = 'login';
             echo json_encode(array(
                 'status' => 1,
-                'message' => 'Đăng ký thành công'
+                'message' => 'Sign Up Success'
             ));
             exit;
         } else {
             echo json_encode(array(
                 'status' => 0,
-                'message' => 'Có lỗi xảy ra khi đăng ký'
+                'message' => 'An error occurred while registering'
             ));
             exit;
         }
     } else {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Thông tin đăng ký không đúng'
+            'message' => 'Registration information is incorrect'
         ));
         exit;
     }

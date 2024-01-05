@@ -42,7 +42,7 @@
                 ));
                 $mail->send();
                 $_SESSION['reset_success'] = true;
-                header("Location: ../Controller/index.php" );
+                header("Location: ../View/login.php" );
                 exit();
             } catch (Exception $e) {
                 echo 'Error: ', $mail->ErrorInfo;

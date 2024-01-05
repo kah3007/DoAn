@@ -17,10 +17,10 @@
         
             try {
                 $user->setRoleToDB();
-                $response = array('status' => 1, 'message' => 'Lưu role người dùng thành công');
+                $response = array('status' => 1, 'message' => 'User role saved successfully');
                 echo json_encode($response);
             } catch (PDOException $e) {
-                $response = array('status' => 0, 'message' => 'Lưu không thành công, vui lòng thử lại');
+                $response = array('status' => 0, 'message' => 'Save failed, please try again');
                 echo json_encode($response);
             }
         }
@@ -28,7 +28,7 @@
      else {
         echo json_encode(array( 
             'status' => 0,
-            'message' => 'Thông tin không đúng'
+            'message' => 'Information is incorrect'
         ));
         exit;
     }

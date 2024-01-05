@@ -90,7 +90,8 @@
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a id="goToAddArticle" href="./article-upload-form.php" class="nav-link">Add article</a>
                                         <a id="goToEditArticle" href="./edit-article.php?show=0" class="nav-link">Edit article</a>
-
+                                        <a id="" href="./blog-home.php" class="nav-link">Edit
+                                            commment</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

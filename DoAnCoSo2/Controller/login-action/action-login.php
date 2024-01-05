@@ -24,14 +24,14 @@
             $_SESSION['userId'] = $u->getUserIdFromData($username);
             echo json_encode(array(
                 'status' => 1,
-                'message' => 'Đăng nhập thành công'
+                'message' => 'Logged in successfully'
             ));
             exit;
         }
         else{
             echo json_encode(array(
                 'status' => 0,
-                'message' => 'Thông tin đăng nhập không đúng'
+                'message' => 'Login information is incorrect'
             ));
             exit;
         }
@@ -39,7 +39,7 @@
     else {
         echo json_encode(array(
             'status' => 0,
-            'message' => 'Thông tin đăng nhập không đúng'
+            'message' => 'Login information is incorrect'
         ));
         exit;
     }
