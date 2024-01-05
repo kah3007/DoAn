@@ -8,8 +8,18 @@
         $result = $article->deleteArticle($articleId);
 
         if ($result) {
-            header("Location: ../../View/admin/edit-article.php?show=0");
-            exit();            
+            if($_GET['show'] == 0){
+                header("Location: ../../View/admin/edit-article.php?show=0");
+                exit();        
+            }    
+            elseif($_GET['show'] == 1){
+                header("Location: ../../View/admin/edit-article.php?show=1");
+                exit();        
+            }
+            else{
+                header("Location: ../../View/admin/edit-article.php?show=2");
+                exit();   
+            }
         }
     } else {
         echo "Invalid article ID.";

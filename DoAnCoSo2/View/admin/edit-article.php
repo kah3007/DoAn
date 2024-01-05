@@ -217,7 +217,7 @@
                                 <td><a id="" href="./article-upload-form.php?id=<?php echo $article['articleId']?>"
                                         type="button" class="btn btn-outline-primary">Edit</a></td>
                                 <td><a id=""
-                                        href="../../Controller/article-action/delete-article.php?id=<?php echo $article['articleId']?>"
+                                        href="../../Controller/article-action/delete-article.php?id=<?php echo $article['articleId']?>&show=<?php echo $_GET['show']?>"
                                         type="button" class="btn btn-outline-danger">Delete</a></td>
                             </tr>
                             <?php endforeach; ?>
