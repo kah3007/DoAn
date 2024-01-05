@@ -11,18 +11,25 @@
         ) {
             $role = $_POST['inputRole'];
             $userId = $_POST['userId'];
-    
-            $user->setRole($role);
-            $user->setUserId($userId);
-        
-            try {
-                $user->setRoleToDB();
-                $response = array('status' => 1, 'message' => 'User role saved successfully');
-                echo json_encode($response);
-            } catch (PDOException $e) {
-                $response = array('status' => 0, 'message' => 'Save failed, please try again');
+            
+            if($role == 1 || $role == 0){
+                $user->setRole($role);
+                $user->setUserId($userId);
+            
+                try {
+                    $user->setRoleToDB();
+                    $response = array('status' => 1, 'message' => 'User role saved successfully');
+                    echo json_encode($response);
+                } catch (PDOException $e) {
+                    $response = array('status' => 0, 'message' => 'Save failed, please try again');
+                    echo json_encode($response);
+                }
+            }
+            else{
+                $response = array('status' => 0, 'message' => 'Role is not in the correct format');
                 echo json_encode($response);
             }
+            
         }
     }
      else {
