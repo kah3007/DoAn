@@ -13,6 +13,8 @@
         <variable
             name="cartFoodObject"
             type="com.example.doancoso3.data.entity.CartFood" />
+        <import type="android.view.View" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -54,23 +56,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="@{foodObject.foodName}"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
-                    <ImageView
-                        android:id="@+id/ivFavoriteButton"
+                    <TextView
+                        android:id="@+id/tvBuying"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="28dp"
-                        android:padding="4dp"
-                        app:srcCompat="@drawable/vc_favorite_border"
-                        app:tint="@color/food_card_item"
-                        tools:ignore="ContentDescription" />
+                        android:padding="4dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -96,7 +95,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:onClick='@{() -> RestaurantDetailModel.foodQuantityChange("Decrease", cartFoodObject)}'
+                            android:onClick='@{()->RestaurantDetailModel.foodQuantityChange("Decrease", cartFoodObject, foodObject)}'
                             android:src="@drawable/vc_decrease"
                             app:tint="@color/product_detail_item"
                             tools:ignore="ContentDescription,ImageContrastCheck" />
@@ -107,8 +106,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_weight="1"
+                            android:text="@{Integer.toString(cartFoodObject.quantity)}"
+                            android:visibility="@{cartFoodObject != null ? View.VISIBLE : View.GONE}"
                             android:textColor="@color/product_detail_item"
-                            android:textSize="20sp"
+                            android:textSize="13sp"
                             />
 
                         <ImageView
@@ -117,31 +118,24 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_weight="1"
-                            android:onClick='@{() -> RestaurantDetailModel.foodQuantityChange("Increase", cartFoodObject)}'
+                            android:onClick='@{()->RestaurantDetailModel.foodQuantityChange("Increase" , cartFoodObject, foodObject)}'
                             android:src="@drawable/vc_increase"
                             app:tint="@color/product_detail_item"
                             tools:ignore="ContentDescription,ImageContrastCheck" />
                     </LinearLayout>
                     <TextView
                         android:id="@+id/tvRestaurantRating"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_alignParentLeft="true"
                         android:paddingTop="10dp"
-                        android:text="4.5"
+                        android:layout_marginStart="13dp"
+                        android:text="@{`Giá: `+Float.toString(foodObject.foodPrice) +`00đ`}"
                         android:textAlignment="textStart"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="#ffc107"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <ImageView
-                        android:id="@+id/ivDetailStar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_alignRight="@+id/tvRestaurantRating"
-                        android:src="@drawable/vc_star"
-                        app:tint="#FFDD00"
-                        tools:ignore="ContentDescription,ImageContrastCheck" />
+                        android:textColor="@color/product_detail_item"
+                        android:textSize="17sp"
+                        />
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>

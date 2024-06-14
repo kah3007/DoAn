@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homePageFragment"
+        android:id="@+id/homeFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/vc_home"
         android:title="Home" />
     <item
-        android:id="@+id/favoritesFragment"
+        android:id="@+id/favoriteFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/vc_favorite"
-        android:title="" />
+        android:title="Favorite Restaurants" />
     <item
-        android:id="@+id/cartFragment"
+        android:id="@+id/myOrderFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/vc_cart"
-        android:title="" />
+        android:title="History Order" />
     <item
-        android:id="@+id/accountFragment"
+        android:id="@+id/userInfoFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/vc_account"
-        android:title="" />
+        android:title="Account" />
 </menu>

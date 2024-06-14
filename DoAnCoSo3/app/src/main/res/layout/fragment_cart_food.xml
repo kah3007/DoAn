@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="CartFoodModel"
+            type="com.example.doancoso3.ui.viewmodel.CartFoodViewModel" />
+        <variable
+            name="CartFoodFragment"
+            type="com.example.doancoso3.ui.fragment.CartFoodFragment" />
+        <variable
+            name="CartAdapter"
+            type="com.example.doancoso3.ui.adapter.CartCardAdapter" />
+        <variable
+            name="totalPrice"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_page"
+        tools:context=".ui.fragment.RestaurantDetailFragment">
+        <TextView
+            android:id="@+id/tvRestaurantName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_page_title"
+            android:padding="15dp"
+            android:text="Giỏ Hàng"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivDetailBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/vc_left"
+            android:onClick="@{() -> CartFoodFragment.goToPreviousPage()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCartCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginTop="20dp"
+            app:adapter="@{CartAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/ivDetailBackButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:spanCount="1" />
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_cart_total"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/line3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <TextView
+                android:id="@+id/tvUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Thanh toán khi nhận hàng"
+                android:layout_gravity="end"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cart_total"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvDetailPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingTop="20dp"
+                    android:text="@{`Tổng cộng: ` + totalPrice +`đ`}"
+                    android:textColor="@color/product_detail_item"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextSizeCheck" />
+                <Button
+                    android:id="@+id/buttonDetailAddCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_cart_button"
+                    android:paddingStart="60dp"
+                    android:paddingEnd="60dp"
+                    android:onClick="@{()-> CartFoodFragment.confirmCartTotal()}"
+                    android:text="Đặt hàng"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/product_detail_item"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="User"
+            type="com.example.doancoso3.data.entity.User" />
+        <variable
+            name="OrderObject"
+            type="com.example.doancoso3.data.entity.Order" />
+        <variable
+            name="ManageOrderViewModel"
+            type="com.example.doancoso3.ui.viewmodel.ManageOrderViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="6dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivFood"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_quantity"
+                android:layout_margin="5dp"
+                tools:ignore="ContentDescription,ImageContrastCheck"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rlOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tvFoodName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{`Người đặt: `+ User.username}"
+                        android:textSize="12sp">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/tvTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{`Tổng tiền: `+ OrderObject.totalPrice+`00đ`}"
+                        android:textSize="12sp">
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlOne"
+                    android:layout_alignParentBottom="true">
+                    <TextView
+                        android:id="@+id/tvTimeOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingTop="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{`Được đặt lúc: ` + ManageOrderViewModel.getTimeOrderText(OrderObject)}"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp"
+                        />
+                    <TextView
+                        android:id="@+id/tvDateOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{`Ngày đặt: `+ ManageOrderViewModel.getDateOrderText(OrderObject)}"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp"
+                        />
+                    <Button
+                        android:id="@+id/buttonAction"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_cart_button"
+                        android:onClick="@{()->ManageOrderViewModel.updateStatus(OrderObject)}"
+                        android:text="@{ManageOrderViewModel.getButtonActionText(OrderObject)}"
+                        android:textColor="@color/white"
+                        android:textAlignment="textStart"
+                        android:textSize="9sp"
+                        app:backgroundTint="@color/product_detail_item"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

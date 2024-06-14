@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="RestaurantObject"
+            type="com.example.doancoso3.data.entity.Restaurant" />
+        <variable
+            name="OrderObject"
+            type="com.example.doancoso3.data.entity.Order" />
+        <variable
+            name="MyOrderViewModel"
+            type="com.example.doancoso3.ui.viewmodel.MyOderViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderUserCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="6dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivRestaurant"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_quantity"
+                android:layout_margin="5dp"
+                tools:ignore="ContentDescription,ImageContrastCheck"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rlOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tvRestaurantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{RestaurantObject.name}"
+                        android:textStyle="bold"
+                        android:textSize="15sp">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/tvTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{`Tổng tiền: `+ OrderObject.totalPrice+`00đ`}"
+                        android:textSize="15sp"
+                        >
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlOne"
+                    android:layout_alignParentBottom="true">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardBackgroundColor="@color/product_detail_item"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="15dp">
+                        <TextView
+                            android:id="@+id/orderStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:paddingStart="13dp"
+                            android:paddingTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{OrderObject != null ? MyOrderViewModel.getButtonActionText(OrderObject) : ``}}"
+                            android:textSize="14sp">
+                        </TextView>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
