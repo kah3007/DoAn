@@ -11,7 +11,7 @@ val gson = GsonBuilder()
     .setLenient()
     .create()
 object rest {
-    private const val BASE_URL = "http://192.168.0.156"
+    private const val BASE_URL = "http://192.168.2.50"
     private var mRetrofit: Retrofit? = null
     val client: Retrofit
         get() {
