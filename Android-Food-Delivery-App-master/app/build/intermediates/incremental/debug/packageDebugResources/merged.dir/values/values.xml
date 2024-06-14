@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="account_card_item">#474747</color>
+    <color name="bg_bottom_selected">#F26A4B</color>
+    <color name="bg_bottom_unselected">#EBEBEE</color>
+    <color name="bg_cart_card">#FFEEC0</color>
+    <color name="bg_favorite_card">#FFEEC0</color>
+    <color name="bg_food_card">#FFEEC0</color>
+    <color name="bg_login_button">#F26A4B</color>
+    <color name="bg_page">#FFF8EB</color>
+    <color name="bg_search_view">#FFEEC0</color>
+    <color name="bg_update_button">#F26A4B</color>
+    <color name="black">#FF000000</color>
+    <color name="bottom_nav_icon_selected">#F26A4B</color>
+    <color name="bottom_nav_icon_unselected">#A9ABB6</color>
+    <color name="cart_card_border">#A9ABB6</color>
+    <color name="cart_card_item">#F26A4B</color>
+    <color name="cart_total">#F26A4B</color>
+    <color name="cart_total_cargo">#18A80F</color>
+    <color name="favorite_card_border">#A9ABB6</color>
+    <color name="favorite_card_item">#F26A4B</color>
+    <color name="food_card_border">#A9ABB6</color>
+    <color name="food_card_item">#F26A4B</color>
+    <color name="header_text">#A9ABB6</color>
+    <color name="login_title">#A9ABB6</color>
+    <color name="product_detail_favorite">#A9ABB6</color>
+    <color name="product_detail_item">#F26A4B</color>
+    <color name="product_detail_star">#FFDD00</color>
+    <color name="progress_bar">#F26A4B</color>
+    <color name="search_view_border">#A9ABB6</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="app_name_text">28sp</dimen>
+    <dimen name="cart_card_cargo">12sp</dimen>
+    <dimen name="cart_card_content">16sp</dimen>
+    <dimen name="cart_card_name">20sp</dimen>
+    <dimen name="cart_no_data">16sp</dimen>
+    <dimen name="cart_total">16sp</dimen>
+    <dimen name="cart_total_button">14sp</dimen>
+    <dimen name="cart_total_cargo">14sp</dimen>
+    <dimen name="cart_total_title">16sp</dimen>
+    <dimen name="edit_text_login">14sp</dimen>
+    <dimen name="favorite_card_button">14sp</dimen>
+    <dimen name="favorite_card_discount">16sp</dimen>
+    <dimen name="favorite_card_name">20sp</dimen>
+    <dimen name="favorite_card_price">16sp</dimen>
+    <dimen name="food_card_content">13sp</dimen>
+    <dimen name="food_card_discount">16sp</dimen>
+    <dimen name="food_card_name">20sp</dimen>
+    <dimen name="food_card_title">16sp</dimen>
+    <dimen name="header_name">16sp</dimen>
+    <dimen name="header_text">14sp</dimen>
+    <dimen name="login_button_text">18sp</dimen>
+    <dimen name="login_click_text">14sp</dimen>
+    <dimen name="login_title">12sp</dimen>
+    <dimen name="order_text">28sp</dimen>
+    <dimen name="page_title">18sp</dimen>
+    <dimen name="product_detail_item">16sp</dimen>
+    <dimen name="product_detail_name">22sp</dimen>
+    <dimen name="product_detail_price">20sp</dimen>
+    <dimen name="progress_bar_text">20sp</dimen>
+    <dimen name="update_account_button">18sp</dimen>
+    <string name="account_title">Kullanıcı Adı veya Email</string>
+    <string name="app_name">Foodie</string>
+    <string name="buttom_nav_account">Hesabım</string>
+    <string name="buttom_nav_cart">Sepetim</string>
+    <string name="buttom_nav_favorites">Favorilerim</string>
+    <string name="buttom_nav_home">Anasayfa</string>
+    <string name="cargo_text">Ücretsiz Teslimat</string>
+    <string name="cart_button_text">Sepete Ekle</string>
+    <string name="cart_cargo_text">15 Dakika İçinde Kuryeye Teslim</string>
+    <string name="cart_no_data">Sepetinizde ürün bulunmamaktadır.</string>
+    <string name="cart_total_button">Sepeti Onayla</string>
+    <string name="cart_total_cargo">Kargo Ücretsiz</string>
+    <string name="cart_total_title">Toplam</string>
+    <string name="discount_text">%10 İndirimli</string>
+    <string name="email_title">Email</string>
+    <string name="favorite_discount_text">-10%</string>
+    <string name="food_card_title">Size Özel Yemekler</string>
+    <string name="gcm_defaultSenderId" translatable="false">1035194200190</string>
+    <string name="google_api_key" translatable="false">AIzaSyBB97_0cnTLnaQEp9MEFOopqkVqzUjIAiU</string>
+    <string name="google_app_id" translatable="false">1:1035194200190:android:e2ba2b514232237221e82f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBB97_0cnTLnaQEp9MEFOopqkVqzUjIAiU</string>
+    <string name="google_storage_bucket" translatable="false">foodieapp-c883f.appspot.com</string>
+    <string name="header_name">Merhaba, %1$s</string>
+    <string name="header_text">Hadi yemeğini alalım!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_button_text">Giriş Yapın</string>
+    <string name="login_click_text">Bir hesabın var mı? Giriş Yap!</string>
+    <string name="order_text">Siparişiniz Alındı</string>
+    <string name="password_title">Şifre</string>
+    <string name="product_detail_star">4.4 (289)</string>
+    <string name="product_detail_title">Ürün Detayı</string>
+    <string name="progress_bar_text">Giriş Yapılıyor…</string>
+    <string name="project_id" translatable="false">foodieapp-c883f</string>
+    <string name="sign_up_button_text">Hesap Oluştur</string>
+    <string name="sign_up_click_text">Bir hesabın yok mu? Hesap Oluştur!</string>
+    <string name="time_text">15–20 Dakika</string>
+    <string name="update_account_button">Güncelle</string>
+    <string name="username_title">Kullanıcı Adı</string>
+    <style name="Base.Theme.Foodie" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/bg_page</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="Theme.Foodie" parent="Base.Theme.Foodie"/>
+</resources>

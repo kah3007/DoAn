@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">1035194200190</string>
+    <string name="google_api_key" translatable="false">AIzaSyBB97_0cnTLnaQEp9MEFOopqkVqzUjIAiU</string>
+    <string name="google_app_id" translatable="false">1:1035194200190:android:e2ba2b514232237221e82f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBB97_0cnTLnaQEp9MEFOopqkVqzUjIAiU</string>
+    <string name="google_storage_bucket" translatable="false">foodieapp-c883f.appspot.com</string>
+    <string name="project_id" translatable="false">foodieapp-c883f</string>
+</resources>

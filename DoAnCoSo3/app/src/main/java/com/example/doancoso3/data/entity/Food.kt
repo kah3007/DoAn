@@ -7,5 +7,6 @@ data class Food(
     @SerializedName("Name") var foodName: String,
     @SerializedName("Description") var foodDescription: String?,
     @SerializedName("Price") var foodPrice: Float,
-    @SerializedName("RestaurantID") var foodRestaurantId: Int
+    @SerializedName("RestaurantID") var foodRestaurantId: Int,
+    @SerializedName("Img") var img: String?
 )

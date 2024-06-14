@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_sign_up.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_sign_up.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_home_page.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_home_page.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/activity_main.xml",
+        "source": "com.example.foodie.app-main-65:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_product_detail.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_product_detail.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/food_card.xml",
+        "source": "com.example.foodie.app-main-65:/layout/food_card.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_favorites.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_favorites.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/account_card.xml",
+        "source": "com.example.foodie.app-main-65:/layout/account_card.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/favorite_card.xml",
+        "source": "com.example.foodie.app-main-65:/layout/favorite_card.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_account.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_account.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_cart.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_cart.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_account_detail.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_account_detail.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/fragment_login.xml",
+        "source": "com.example.foodie.app-main-65:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.example.foodie.app-mergeDebugResources-62:/layout/cart_card.xml",
+        "source": "com.example.foodie.app-main-65:/layout/cart_card.xml"
+    }
+]
