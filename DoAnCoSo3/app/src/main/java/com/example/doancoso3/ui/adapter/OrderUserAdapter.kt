@@ -1,11 +1,13 @@
 package com.example.doancoso3.ui.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.doancoso3.R
 import com.example.doancoso3.data.entity.Order
 import com.example.doancoso3.data.entity.Restaurant
@@ -16,6 +18,11 @@ import com.example.doancoso3.ui.fragment.MyOrderFragmentDirections
 import com.example.doancoso3.ui.viewmodel.ManageOrderViewModel
 import com.example.doancoso3.ui.viewmodel.MyOderViewModel
 import com.example.doancoso3.utils.changePage
+import com.google.android.gms.tasks.Task
+import com.google.firebase.storage.FileDownloadTask
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
+import java.io.IOException
 
 class OrderUserAdapter  (
     private val context: Context,
@@ -23,6 +30,7 @@ class OrderUserAdapter  (
     private var restaurantList: List<Restaurant>,
     private val viewModel: MyOderViewModel,
 ) : RecyclerView.Adapter<OrderUserAdapter.OrderUserViewHolder>() {
+    private val storageReference = FirebaseStorage.getInstance().reference // Initialize storageReference
 
     inner class OrderUserViewHolder(val binding: OrderUserCardBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -36,6 +44,32 @@ class OrderUserAdapter  (
         val binding = holder.binding
         val order = orderList[position]
         val matchingRes = restaurantList.find { it.id == order.restaurantId }
+
+        val imagePath = matchingRes!!.img
+        if (imagePath != null && imagePath.isNotEmpty()) {
+            val storageRef = storageReference.child(imagePath)
+
+            // Create a temporary file to store the downloaded image
+            val tempFile: File
+            try {
+                tempFile = File.createTempFile("image", "jpg")
+            } catch (e: IOException) {
+                e.printStackTrace()
+                return
+            }
+
+            storageRef.getFile(tempFile).addOnCompleteListener { task: Task<FileDownloadTask.TaskSnapshot?> ->
+                if (task.isSuccessful) {
+                    Glide.with(context)
+                        .load(tempFile)
+                        .into(holder.binding.ivRestaurant)
+                } else {
+                    // Handle failures
+                    Log.e("TAG", "Failed to download file: ${task.exception}")
+                }
+            }
+        } else {
+        }
 
         binding.restaurantObject = matchingRes
         binding.orderObject = order

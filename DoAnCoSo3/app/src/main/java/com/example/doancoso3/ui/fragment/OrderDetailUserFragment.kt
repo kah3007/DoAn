@@ -9,12 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
 import com.example.doancoso3.R
 import com.example.doancoso3.databinding.FragmentOrderDetailUserBinding
 import com.example.doancoso3.ui.adapter.OrderDetailAdapter
 import com.example.doancoso3.ui.viewmodel.OrderDetailUserViewModel
-import com.example.doancoso3.utils.changePage
 
 class OrderDetailUserFragment : Fragment() {
     private lateinit var binding: FragmentOrderDetailUserBinding

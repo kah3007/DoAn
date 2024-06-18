@@ -101,7 +101,10 @@ class MainActivity : AppCompatActivity() {
         }
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.loginFragment, R.id.signUpFragment, R.id.homeRestaurantFragment, R.id.restaurantDetailFragment, R.id.cartFoodFragment, R.id.manageOrderFragment, R.id.orderDetailFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.loginFragment, R.id.signUpFragment, R.id.homeRestaurantFragment,
+                R.id.restaurantDetailFragment, R.id.cartFoodFragment, R.id.manageOrderFragment,
+                R.id.manageFoodFragment,R.id.editFoodFragment,R.id.orderDetailFragment,
+                R.id.editFoodFragment, R.id.addFoodFragment, R.id.revenueFragment-> binding.bottomNavigationView.visibility = View.GONE
                 else -> binding.bottomNavigationView.visibility = View.VISIBLE
             }
         }

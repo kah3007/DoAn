@@ -5,31 +5,54 @@
 
     <data>
         <variable
-            name="UserInfoViewModel"
-            type="com.example.doancoso3.ui.viewmodel.UserInfoViewModel" />
+            name="AddFoodFragment"
+            type="com.example.doancoso3.ui.fragment.AddFoodFragment" />
+        <variable
+            name="AddFoodViewModel"
+            type="com.example.doancoso3.ui.viewmodel.AddFoodViewModel" />
         <import type="com.google.android.material.textfield.TextInputLayout" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.UserInfoFragment">
-
+        tools:context=".ui.fragment.AddFoodFragment">
         <TextView
-            android:id="@+id/tvEditAddress"
+            android:id="@+id/tvAddFood"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_page_title"
             android:paddingTop="15dp"
             android:paddingEnd="15dp"
             android:paddingBottom="15dp"
-            android:text="Edit Address"
+            android:text="Add Food"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/ivDetailBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/vc_left"
+            android:onClick="@{() -> AddFoodFragment.goToPreviousPage()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddFood"
+            android:src="@drawable/ic_launcher_foreground" />
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutCurrent"
             android:layout_width="0dp"
@@ -38,17 +61,17 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Address"
+            android:hint="Name Food"
             app:hintTextColor="@color/bg_update_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEditAddress"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextCurrent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={UserInfoViewModel.address}"
+                android:text="@={AddFoodViewModel.name}"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -61,7 +84,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Ward/ District"
+            android:hint="Description"
             app:hintTextColor="@color/bg_update_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +95,7 @@
                 android:id="@+id/editTextNew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={UserInfoViewModel.ward}"
+                android:text="@={AddFoodViewModel.description}"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +108,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Note to Driver"
+            android:hint="Price (1000 VND unit)"
             app:hintTextColor="@color/bg_update_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,25 +119,26 @@
                 android:id="@+id/editTextAgainNew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={UserInfoViewModel.note}"
+                android:text="@={AddFoodViewModel.price}"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/buttonUpdateUserInfo"
+            android:id="@+id/buttonAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/bg_update_button"
-            android:text="Update"
+            android:onClick="@{()->AddFoodViewModel.onAddButtonClick()}"
+            android:text="Add"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:onClick="@{()-> UserInfoViewModel.onUpdateButtonClick()}"
             app:backgroundTint="@color/bg_update_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutAgainNew"
             tools:ignore="TextContrastCheck" />

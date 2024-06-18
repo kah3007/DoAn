@@ -12,6 +12,8 @@
         <variable
             name="RestaurantAdapter"
             type="com.example.doancoso3.ui.adapter.FavRestaurantAdapter" />
+        <import type="android.view.View" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +67,14 @@
                     android:textSize="14sp"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/ivLogout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:onClick="@{()-> FavModel.onClickLogout(tvHeaderContent)}"
+                app:srcCompat="@drawable/vc_logout"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
 
         <SearchView

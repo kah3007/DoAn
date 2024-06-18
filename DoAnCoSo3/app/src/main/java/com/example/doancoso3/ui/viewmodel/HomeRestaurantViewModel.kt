@@ -1,20 +1,19 @@
 package com.example.doancoso3.ui.viewmodel
 
 import android.view.View
-import androidx.databinding.BaseObservable
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
-import com.example.doancoso3.R
 import com.example.doancoso3.utils.changePage
-import androidx.databinding.ObservableField
+import com.example.doancoso3.ui.fragment.HomeRestaurantFragmentDirections
+import com.google.android.material.snackbar.Snackbar
 
-class HomeRestaurantViewModel: BaseObservable() {
-
-    fun onClickManageFood() {
+class HomeRestaurantViewModel: ViewModel() {
+    fun onClickLogout(view: View){
+        Snackbar.make(view, "Do you want to logout ?", Snackbar.LENGTH_SHORT)
+            .setAction("Yes") {
+                val direction = HomeRestaurantFragmentDirections.actionHomeRestaurantFragmentToLoginFragment()
+                Navigation.changePage(view, direction)
+            }
+            .show()
     }
-    fun onClickManageOrder(view: View) {
-        val manageOrderDestinationId = R.id.action_homeRestaurantFragment_to_manageOrderFragment
-        Navigation.changePage(view, manageOrderDestinationId)
-    }
-
 }

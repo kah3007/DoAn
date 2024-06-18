@@ -150,7 +150,7 @@
                     android:background="@drawable/bg_cart_button"
                     android:paddingStart="60dp"
                     android:paddingEnd="60dp"
-                    android:onClick="@{()->OrderDetailViewModel.updateStatus(OrderObject)}"
+                    android:onClick="@{()-> OrderObject.status != 3 ? OrderDetailViewModel.updateStatus(OrderObject) : null}"
                     android:text="@{OrderObject != null ? OrderDetailViewModel.getButtonActionText(OrderObject) : ``}"
                     android:textColor="@color/white"
                     android:textStyle="bold"

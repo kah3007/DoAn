@@ -4,26 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="MyOderViewModel"
-            type="com.example.doancoso3.ui.viewmodel.MyOderViewModel" />
+            name="ManageFoodViewModel"
+            type="com.example.doancoso3.ui.viewmodel.ManageFoodViewModel" />
         <variable
-            name="MyOrderFragment"
-            type="com.example.doancoso3.ui.fragment.MyOrderFragment" />
+            name="ManageFoodFragment"
+            type="com.example.doancoso3.ui.fragment.ManageFoodFragment" />
         <variable
-            name="OrderUserAdapter"
-            type="com.example.doancoso3.ui.adapter.OrderUserAdapter" />
-        <variable
-            name="OrderHistoryUserAdapter"
-            type="com.example.doancoso3.ui.adapter.OrderHistoryUserAdapter" />
+            name="FoodAdminAdapter"
+            type="com.example.doancoso3.ui.adapter.FoodAdminAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_page"
-        tools:context=".ui.fragment.MyOrderFragment">
+        tools:context=".ui.fragment.ManageFoodFragment">
         <TextView
-            android:id="@+id/tvHome"
+            android:id="@+id/tvRestaurantName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_page_title"
@@ -42,62 +39,50 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/vc_left"
-            android:onClick="@{() -> MyOrderFragment.goToPreviousPage()}"
+            android:onClick="@{() -> ManageFoodFragment.goToPreviousPage()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
-
+        <Button
+            android:id="@+id/buttonAction"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_cart_button"
+            android:text="Add Food"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:onClick="@{() -> ManageFoodFragment.goToAddFood(tvRestaurantName)}"
+            app:backgroundTint="@color/product_detail_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck, SpeakableTextPresentCheck" />
         <TextView
-            android:id="@+id/tvOrderDetail"
+            android:id="@+id/tvFoodTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-medium"
-            android:text="All Orders"
+            android:text="All Foods"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHome" />
+            app:layout_constraintTop_toBottomOf="@+id/tvRestaurantName" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvOrder"
+            android:id="@+id/rvFood"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="0dp"
             android:layout_marginStart="11dp"
             android:layout_marginEnd="11dp"
             android:layout_marginTop="15dp"
-            app:adapter="@{OrderUserAdapter}"
+            app:adapter="@{FoodAdminAdapter}"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/tvOrderDetail"
+            app:layout_constraintTop_toBottomOf="@id/tvFoodTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:spanCount="1" />
-        <TextView
-            android:id="@+id/tvOrderHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="Order History"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvOrder" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvOrderHistory"
-            android:layout_width="0dp"
-            android:layout_height="300dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginEnd="11dp"
-            android:layout_marginTop="15dp"
-            app:adapter="@{OrderHistoryUserAdapter}"
-            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/tvOrderHistory"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:spanCount="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

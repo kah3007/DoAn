@@ -7,6 +7,6 @@ data class Order(
     @SerializedName("RestaurantID") var restaurantId: Int,
     @SerializedName("Username") var username: String,
     @SerializedName("OrderDate") var orderDate: String,
-    @SerializedName("TotalPrice") var totalPrice: Double,
+    @SerializedName("TotalPrice") var totalPrice: Float,
     @SerializedName("Status") var status: Int
 )

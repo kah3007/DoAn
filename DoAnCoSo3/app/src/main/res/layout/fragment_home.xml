@@ -65,7 +65,14 @@
                     android:textSize="14sp"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/ivLogout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:onClick="@{()-> HomeViewModel.onClickLogout(tvHeaderContent)}"
+                app:srcCompat="@drawable/vc_logout"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
 
         <SearchView

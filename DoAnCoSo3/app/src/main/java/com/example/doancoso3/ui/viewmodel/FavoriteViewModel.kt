@@ -4,9 +4,13 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.Navigation
 import com.example.doancoso3.data.DAO.RestaurantDAO
 import com.example.doancoso3.data.entity.Restaurant
 import com.example.doancoso3.data.retrofit.rest
+import com.example.doancoso3.ui.fragment.FavoriteFragmentDirections
+import com.example.doancoso3.ui.fragment.HomeFragmentDirections
+import com.example.doancoso3.utils.changePage
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -67,5 +71,13 @@ class FavoriteViewModel: ViewModel() {
                 }
             }
         }
+    }
+    fun onClickLogout(view: View){
+        Snackbar.make(view, "Do you want to logout ?", Snackbar.LENGTH_SHORT)
+            .setAction("Yes") {
+                val direction = FavoriteFragmentDirections.actionFavoriteFragmentToLoginFragment()
+                Navigation.changePage(view, direction)
+            }
+            .show()
     }
 }

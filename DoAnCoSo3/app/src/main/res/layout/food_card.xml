@@ -124,17 +124,17 @@
                             tools:ignore="ContentDescription,ImageContrastCheck" />
                     </LinearLayout>
                     <TextView
-                        android:id="@+id/tvRestaurantRating"
+                        android:id="@+id/tvPrice"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:paddingTop="10dp"
-                        android:layout_marginStart="13dp"
-                        android:text="@{`Giá: `+Float.toString(foodObject.foodPrice) +`00đ`}"
-                        android:textAlignment="textStart"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="@color/product_detail_item"
+                        android:text="@{Float.toString(foodObject.foodPrice) +`00đ`}"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="11dp"
                         android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/product_detail_item"
+                        android:padding="4dp"
                         />
                 </RelativeLayout>
             </RelativeLayout>

@@ -5,19 +5,17 @@
 
     <data>
         <variable
-            name="User"
-            type="com.example.doancoso3.data.entity.User" />
+            name="foodObject"
+            type="com.example.doancoso3.data.entity.Food" />
         <variable
-            name="OrderObject"
-            type="com.example.doancoso3.data.entity.Order" />
-        <variable
-            name="ManageOrderViewModel"
-            type="com.example.doancoso3.ui.viewmodel.ManageOrderViewModel" />
+            name="ManageFoodViewModel"
+            type="com.example.doancoso3.ui.viewmodel.ManageFoodViewModel" />
         <import type="android.view.View" />
+
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/orderCard"
+        android:id="@+id/cardFood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -54,69 +52,67 @@
                         android:id="@+id/tvFoodName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="13dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-medium"
-                        android:text="@{`Người đặt: `+ User.username}"
-                        android:textSize="12sp">
-                    </TextView>
-                    <TextView
-                        android:id="@+id/tvTotalPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="10dp"
+                        android:text="@{foodObject.foodName}"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:id="@+id/buttonEdit"
+                        android:layout_width="85dp"
+                        android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@{`Tổng tiền: `+ OrderObject.totalPrice+`00đ`}"
-                        android:textSize="12sp">
-                    </TextView>
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_cart_button"
+                        android:text="Edit"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        app:backgroundTint="@color/product_detail_item"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
                 </RelativeLayout>
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rlOne"
                     android:layout_alignParentBottom="true">
                     <TextView
-                        android:id="@+id/tvTimeOrder"
+                        android:id="@+id/tvBuying"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:layout_alignParentLeft="true"
-                        android:paddingTop="5dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@{`Được đặt lúc: ` + ManageOrderViewModel.getTimeOrderText(OrderObject)}"
-                        android:textAlignment="textStart"
-                        android:textSize="12sp"
-                        />
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="13dp"
+                        android:padding="4dp"/>
                     <TextView
-                        android:id="@+id/tvDateOrder"
+                        android:id="@+id/tvPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@{`Ngày đặt: `+ ManageOrderViewModel.getDateOrderText(OrderObject)}"
-                        android:textAlignment="textStart"
-                        android:textSize="12sp"
-                        />
+                        android:text="@{Float.toString(foodObject.foodPrice)+`00đ`}"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="11dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/product_detail_item"
+                        android:padding="4dp"/>
                     <Button
-                        android:id="@+id/buttonAction"
-                        android:layout_width="110dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/buttonDelete"
+                        android:layout_width="85dp"
+                        android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="5dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_marginTop="5dp"
                         android:background="@drawable/bg_cart_button"
-                        android:onClick="@{()-> OrderObject.status != 3 ? ManageOrderViewModel.updateStatus(OrderObject) : null}"
-                        android:text="@{ManageOrderViewModel.getButtonActionText(OrderObject)}"
+                        android:onClick="@{()-> ManageFoodViewModel.onClickDelete(foodObject.foodId)}"
+                        android:text="Delete"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textAlignment="textStart"
-                        android:textSize="9sp"
+                        android:textSize="12sp"
                         app:backgroundTint="@color/product_detail_item"
-                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,TextSizeCheck" />
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>

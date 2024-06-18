@@ -67,8 +67,7 @@ class OrderDetailFragment : Fragment() {
         viewModel.orderStatus?.observe(viewLifecycleOwner, Observer{
             it?.let{orderStatus ->
                 if(orderStatus == 3){
-                    val direction = OrderDetailFragmentDirections.actionOrderDetailFragmentToManageOrderFragment()
-                    Navigation.changePage(requireView(), direction)
+
                 }
             }
         })

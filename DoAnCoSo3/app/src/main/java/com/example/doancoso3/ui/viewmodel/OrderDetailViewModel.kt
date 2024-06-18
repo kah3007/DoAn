@@ -111,8 +111,11 @@ class OrderDetailViewModel: ViewModel() {
             "Receive Order"
         }else if(order.status == 1){
             "Delivery"
-        }else{
+        }else if(order.status == 2){
             "Delivery was done"
+        }
+        else{
+            "Completed"
         }
     }
     fun loadOrder(orderID: Int){

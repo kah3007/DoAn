@@ -9,8 +9,18 @@ import retrofit2.http.POST
 
 interface OrderDAO {
     @Headers("Accept: application/json; charset=utf-8")
-    @POST("/x/load_order.php")
-    suspend fun loadOrder(): OrderResponse
+    @FormUrlEncoded
+    @POST("/x/load_order_admin_by_username.php")
+    suspend fun loadOrderAdminByUsername(
+        @Field("username") username: String
+    ): OrderResponse
+
+    @Headers("Accept: application/json; charset=utf-8")
+    @FormUrlEncoded
+    @POST("/x/load_order_admin_history_by_username.php")
+    suspend fun loadOrderAdminHistoryByUsername(
+        @Field("username") username: String
+    ): OrderResponse
 
     @Headers("Accept: application/json; charset=utf-8")
     @FormUrlEncoded

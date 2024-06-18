@@ -75,7 +75,7 @@
                 android:background="@drawable/bg_food_card">
 
                 <ImageView
-                    android:id="@+id/ivDetailRestaurant"
+                    android:id="@+id/ivRestaurant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"

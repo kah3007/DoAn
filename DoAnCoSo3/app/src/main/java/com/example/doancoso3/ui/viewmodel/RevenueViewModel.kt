@@ -1,6 +1,8 @@
 package com.example.doancoso3.ui.viewmodel
 
+import android.content.Context
 import android.util.Log
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,11 +19,12 @@ import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class ManageOrderViewModel: ViewModel() {
+class RevenueViewModel(private val context: Context): ViewModel() {
     var username = ""
+    val hintText = ObservableField<String>("")
 
-    private val _orderList = MutableLiveData<List<Order>>()
-    val orderList: MutableLiveData<List<Order>> = _orderList
+    val _total = MutableLiveData<Float>()
+    val total: MutableLiveData<Float> = _total
 
     private val _orderHistory = MutableLiveData<List<Order>>()
     val orderHistory: MutableLiveData<List<Order>> = _orderHistory
@@ -34,25 +37,6 @@ class ManageOrderViewModel: ViewModel() {
 
     init {
         loadUser()
-    }
-
-    fun loadOrder(username: String){
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                val response = mOrderService?.loadOrderAdminByUsername(username)
-                if (response != null && response.success) {
-                    if (response.success == true) {
-                        _orderList.postValue(response.orderList!!)
-                    } else {
-                        _orderList.postValue(emptyList())
-                    }
-                } else {
-                    _orderList.postValue(emptyList())
-                }
-            } catch (e: Exception) {
-                Log.e("ManageOrder", "Failed to load order: ${e}")
-            }
-        }
     }
     fun loadOrderHistory(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -69,24 +53,6 @@ class ManageOrderViewModel: ViewModel() {
                 }
             } catch (e: Exception) {
                 Log.e("ManageOrder", "Failed to load order history: ${e}")
-            }
-        }
-    }
-    fun updateStatus(order: Order){
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                val response = mOrderService?.updateStatus(order.orderId)
-                if (response != null && response.success) {
-                    if (response.success == true) {
-                        loadOrder(username)
-                    } else {
-                        Log.e("ManageOrder", " Failed to update order: ${response.success}")
-                    }
-                } else {
-                    Log.e("ManageOrder", " Failed to update order: ${response!!.success}")
-                }
-            } catch (e: Exception) {
-                Log.e("ManageOrder", "Failed to update order: ${e}")
             }
         }
     }
@@ -107,6 +73,16 @@ class ManageOrderViewModel: ViewModel() {
                 Log.e("ManageOrder", "Failed to load user: ${e}")
             }
         }
+    }
+    fun updateHintText(selectedOption: String) {
+        hintText.set(
+            when (selectedOption) {
+                "Date" -> "DD/MM/YYYY"
+                "Month" -> "MM/YYYY"
+                "Year" -> "YYYY"
+                else -> ""
+            }
+        )
     }
     fun getButtonActionText(order: Order): String {
         return if (order.status == 0) {

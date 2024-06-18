@@ -11,7 +11,7 @@
         android:name="com.example.doancoso3.ui.fragment.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
-    <action
+        <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_homeFragment_to_myOrderFragment"
             app:destination="@id/myOrderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -104,6 +107,9 @@
         <action
             android:id="@+id/action_favoriteFragment_to_myOrderFragment"
             app:destination="@id/myOrderFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeRestaurantFragment"
@@ -115,7 +121,28 @@
             app:argType="string"/>
         <action
             android:id="@+id/action_homeRestaurantFragment_to_manageOrderFragment"
-            app:destination="@id/manageOrderFragment" />
+            app:destination="@id/manageOrderFragment">
+            <argument
+                android:name="username"
+                app:argType="string"/>
+        </action>
+        <action
+            android:id="@+id/action_homeRestaurantFragment_to_manageFoodFragment"
+            app:destination="@id/manageFoodFragment">
+            <argument
+                android:name="username"
+                app:argType="string"/>
+        </action>
+        <action
+            android:id="@+id/action_homeRestaurantFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeRestaurantFragment_to_revenueFragment"
+            app:destination="@id/revenueFragment">
+            <argument
+                android:name="username"
+                app:argType="string"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/manageOrderFragment"
@@ -138,6 +165,9 @@
                 app:argType="integer"
                 android:defaultValue="0" />
         </action>
+        <action
+            android:id="@+id/action_manageOrderFragment_to_homeRestaurantFragment"
+            app:destination="@id/homeRestaurantFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderDetailFragment"
@@ -201,5 +231,68 @@
         android:name="com.example.doancoso3.ui.fragment.OrderDetailUserFragment"
         android:label="OrderDetailUserFragment"
         tools:layout="@layout/fragment_order_detail_user">
+    </fragment>
+    <fragment
+        android:id="@+id/manageFoodFragment"
+        android:name="com.example.doancoso3.ui.fragment.ManageFoodFragment"
+        android:label="ManageFoodFragment"
+        tools:layout="@layout/fragment_manage_food">
+        <action
+            android:id="@+id/action_manageFoodFragment_to_homeRestaurantFragment"
+            app:destination="@id/homeRestaurantFragment" />
+        <action
+            android:id="@+id/action_manageFoodFragment_to_editFoodFragment"
+            app:destination="@id/editFoodFragment">
+            <argument
+                android:name="food_id"
+                app:argType="integer"
+                android:defaultValue="0" />
+            <argument
+                android:name="restaurant_id"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
+        <action
+            android:id="@+id/action_manageFoodFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment">
+            <argument
+                android:name="username"
+                app:argType="string"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/editFoodFragment"
+        android:name="com.example.doancoso3.ui.fragment.EditFoodFragment"
+        android:label="EditFoodFragment"
+        tools:layout="@layout/fragment_edit_food">
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.doancoso3.ui.fragment.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" />
+    <fragment
+        android:id="@+id/revenueFragment"
+        android:name="com.example.doancoso3.ui.fragment.RevenueFragment"
+        android:label="RevenueFragment"
+        tools:layout="@layout/fragment_revenue" >
+        <action
+            android:id="@+id/action_revenueFragment_to_homeRestaurantFragment"
+            app:destination="@id/homeRestaurantFragment" />
+        <action
+            android:id="@+id/action_revenueFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" >
+            <argument
+                android:name="orderID"
+                app:argType="integer"
+                android:defaultValue="0" />
+            <argument
+                android:name="username"
+                app:argType="string"/>
+            <argument
+                android:name="restaurantId"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
     </fragment>
 </navigation>

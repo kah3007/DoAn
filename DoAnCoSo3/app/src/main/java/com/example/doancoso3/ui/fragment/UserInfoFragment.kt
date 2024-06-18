@@ -7,15 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
 import com.example.doancoso3.R
-import com.example.doancoso3.databinding.FragmentRestaurantDetailBinding
 import com.example.doancoso3.databinding.FragmentUserInfoBinding
-import com.example.doancoso3.ui.viewmodel.RestaurantDetailModel
 import com.example.doancoso3.ui.viewmodel.UserInfoViewModel
-import com.example.doancoso3.utils.changePage
 
 class UserInfoFragment : Fragment() {
     private lateinit var binding: FragmentUserInfoBinding
